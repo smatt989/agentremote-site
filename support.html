@@ -20,7 +20,7 @@
       <section class="use-case" aria-labelledby="support-title">
         <p class="eyebrow">SUPPORT</p>
         <h2 id="support-title">Get connected.<br>Stay connected.</h2>
-        <p>Agent Remote has two parts: a free Mac app that runs your Claude Code and Codex sessions, and the iPhone app that controls them. Most questions come down to pairing the two and keeping the Mac reachable. Email <a href="mailto:smatt989@aol.com" data-placeholder="contact-email">smatt989@aol.com</a> if this page does not solve it; include your iPhone app version (Settings → About) and Mac app version (menu bar → About).</p>
+        <p>Agent Remote has two parts: a free Mac app that runs your Claude Code and Codex sessions, and the iPhone app that controls them. Most questions come down to pairing the two and keeping the Mac reachable. If this page does not solve it, <a href="https://github.com/smatt989/agentremote-site/issues">open an issue</a> or email <a href="mailto:smatt989@aol.com" data-placeholder="contact-email">smatt989@aol.com</a>. Include the Mac app version, shown at the bottom of the Agent Remote window.</p>
       </section>
 
       <section class="details" aria-labelledby="setup-title">
@@ -39,12 +39,12 @@
         <p class="eyebrow">02 / TROUBLESHOOTING</p>
         <h2 id="fix-title">When something doesn’t connect.</h2>
         <dl class="facts">
-          <div><dt>“Mac unavailable”</dt><dd>The Mac must be awake, online, and running Agent Remote (menu bar shows <em>Relay: connected</em>). Sleep, a closed lid, or quitting the app all end remote access. Check System Settings → Energy to prevent sleep while plugged in.</dd></div>
+          <div><dt>“Mac unavailable”</dt><dd>The Mac must be awake, online, and running Agent Remote (the Agent Remote window on the Mac says <em>Online</em>). Sleep, a closed lid, or quitting the app all end remote access. Check System Settings → Energy to prevent sleep while plugged in.</dd></div>
           <div><dt>Pairing code rejected</dt><dd>Codes expire after five minutes and work once. Click <strong>Show pairing code</strong> again for a fresh one.</dd></div>
           <div><dt>Session won’t accept messages</dt><dd>A conversation owned by another client (for example a Claude session running in a separate terminal) is read-only until that client exits. Exit it, then resume from Agent Remote.</dd></div>
-          <div><dt>No reply notifications on the lock screen</dt><dd>In-app alerts work as soon as you turn notifications on. Background alerts need Apple Push configured on the Mac; the Notifications screen tells you if it is still waiting for that setup.</dd></div>
+          <div><dt>No reply notifications on the lock screen</dt><dd>Alerts appear while the app is open as soon as you turn notifications on. Lock-screen alerts are not yet available for every Mac; the Notifications screen says whether yours has them.</dd></div>
           <div><dt>Camera or microphone not working</dt><dd>Check iPhone Settings → Agent Remote and allow Camera (pairing), Microphone and Speech Recognition (dictation).</dd></div>
-          <div><dt>Remove a phone</dt><dd>On the Mac, open Agent Remote → Devices and revoke the phone, or from the project folder run <code>npm run devices</code> then <code>node desktop/src/admin.mjs revoke DEVICE_ID</code>.</dd></div>
+          <div><dt>Remove a phone</dt><dd>In Terminal on the Mac, run <code>cd "/Applications/Agent Remote.app/Contents/Resources" &amp;&amp; runtime/arm64/bin/node service/desktop/src/admin.mjs devices</code> to list paired devices, then the same command with <code>revoke DEVICE_ID</code> in place of <code>devices</code>. On an Intel Mac, use <code>runtime/x64</code>.</dd></div>
         </dl>
       </section>
 
